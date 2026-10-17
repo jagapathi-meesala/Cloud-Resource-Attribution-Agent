@@ -10,4 +10,3 @@ output_schema:
   type: object
   properties:
     report: {type: object}
-side_effects: none

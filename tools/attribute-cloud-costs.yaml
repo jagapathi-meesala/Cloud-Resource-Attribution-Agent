@@ -13,4 +13,3 @@ output_schema:
     status: {type: string}
     records: {type: array}
     totals_by_currency: {type: object}
-side_effects: none

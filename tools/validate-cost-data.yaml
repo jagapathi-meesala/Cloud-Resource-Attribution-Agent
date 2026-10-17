@@ -11,4 +11,3 @@ output_schema:
   properties:
     valid: {type: boolean}
     issues: {type: array}
-side_effects: none
