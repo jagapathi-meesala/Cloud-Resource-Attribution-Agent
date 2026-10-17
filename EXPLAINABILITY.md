@@ -68,3 +68,32 @@ Identical inputs produce identical decisions. Each attribution traces to its rec
 
 ## Global Limits
 No external services, credentials, currency conversion, financial posting, resource modification, or chargeback execution. Supplied data may be incomplete or inaccurate.
+## Decision Traceability
+
+Each processed record should be traceable through its supplied record identifier, resource identifier, configured tag keys, original tag values, validation findings, and final attribution. Missing or blank ownership tags are represented as `unallocated`; the agent does not substitute inferred team, project, or environment values. Reviewers should compare the report with the original input record to verify each decision.
+
+## Determinism and Reproducibility
+
+The attribution engine uses explicit configuration and supplied input data. It does not use probabilistic ownership inference, external lookups, or currency conversion. Re-running the same input with the same configuration should produce equivalent attribution decisions and currency-separated totals.
+
+## Validation and Exclusion Rules
+
+Records that fail validation must remain visible in the report with their associated findings. Invalid records are excluded from valid cost totals so that malformed data does not silently affect reconciliation. Duplicate identifiers, missing required fields, invalid currency values, malformed tags, and negative or non-finite costs require review according to the implemented validation rules.
+
+## Confidence and Uncertainty
+
+The agent does not assign a probabilistic confidence score to ownership. An attribution based on an explicit tag indicates what the supplied data states, not independent proof that the ownership information is correct. Missing, ambiguous, or potentially outdated tag information requires human verification.
+
+## Review Checklist
+
+Before using a report for financial or operational decisions, a reviewer should:
+1. Confirm the input export covers the intended billing period.
+2. Verify that the supplied records are complete and that costs and currencies match the source export.
+3. Confirm that configured tag keys match the organization's tagging policy.
+4. Investigate unallocated records, duplicate identifiers, and validation findings.
+5. Verify that record-level decisions reconcile with totals for each currency.
+6. Approve any downstream showback or chargeback process separately.
+
+## Non-Goals
+
+This agent performs attribution and reporting only. It does not establish legal ownership, certify invoice accuracy, forecast spending, recommend resource deletion, modify cloud resources, or execute financial postings. Its output is decision-support evidence and is not a substitute for billing-system reconciliation or human approval.
