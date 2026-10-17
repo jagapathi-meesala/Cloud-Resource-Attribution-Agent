@@ -1,0 +1,13 @@
+name: generate-attribution-report
+description: Generate an auditable JSON report with record-level attribution, currency-separated totals, findings, and limitations.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    attribution_result: {type: object}
+  required: [attribution_result]
+output_schema:
+  type: object
+  properties:
+    report: {type: object}
+side_effects: none

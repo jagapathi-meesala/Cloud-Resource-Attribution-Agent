@@ -1,0 +1,18 @@
+spec_version: "0.1.0"
+name: cloud-resource-attribution-agent
+version: "1.0.0"
+description: Attribute supplied cloud cost records to teams, projects, and environments using explicit resource tags.
+author: jagapathi-meesala
+license: MIT
+skills:
+  - cloud-cost-attribution
+  - tag-quality-review
+  - cost-reporting
+tools:
+  - validate-cost-data
+  - attribute-cloud-costs
+  - generate-attribution-report
+runtime:
+  max_turns: 8
+  temperature: 0.1
+  timeout: 60

@@ -1,0 +1,16 @@
+name: attribute-cloud-costs
+description: Attribute valid cost records using explicit resource tags without guessing or currency conversion.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    records: {type: array}
+    tag_keys: {type: object}
+  required: [records]
+output_schema:
+  type: object
+  properties:
+    status: {type: string}
+    records: {type: array}
+    totals_by_currency: {type: object}
+side_effects: none

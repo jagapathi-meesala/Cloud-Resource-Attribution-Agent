@@ -1,0 +1,37 @@
+[
+  {
+    "record_id": "line-001",
+    "resource_id": "vm-001",
+    "service": "compute",
+    "cost": "12.50",
+    "currency": "USD",
+    "tags": {
+      "team": "platform",
+      "project": "portal",
+      "environment": "prod"
+    }
+  },
+  {
+    "record_id": "line-002",
+    "resource_id": "bucket-007",
+    "service": "storage",
+    "cost": "3.25",
+    "currency": "USD",
+    "tags": {
+      "team": "data",
+      "project": "analytics",
+      "environment": "dev"
+    }
+  },
+  {
+    "record_id": "line-003",
+    "resource_id": "db-009",
+    "service": "database",
+    "cost": "5.00",
+    "currency": "USD",
+    "tags": {
+      "project": "portal",
+      "environment": "prod"
+    }
+  }
+]

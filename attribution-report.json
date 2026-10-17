@@ -1,0 +1,105 @@
+{
+  "status": "review_required",
+  "record_count": 3,
+  "valid_record_count": 3,
+  "invalid_record_count": 0,
+  "totals_by_currency": {
+    "USD": "20.75"
+  },
+  "unallocated_cost_by_currency": {
+    "USD": "5.00"
+  },
+  "records": [
+    {
+      "record_index": 0,
+      "record_id": "line-001",
+      "resource_id": "vm-001",
+      "service": "compute",
+      "cost": "12.50",
+      "currency": "USD",
+      "attribution": {
+        "team": "platform",
+        "project": "portal",
+        "environment": "prod"
+      },
+      "evidence": {
+        "team": {
+          "tag_key": "team",
+          "tag_value": "platform"
+        },
+        "project": {
+          "tag_key": "project",
+          "tag_value": "portal"
+        },
+        "environment": {
+          "tag_key": "environment",
+          "tag_value": "prod"
+        }
+      },
+      "status": "attributed"
+    },
+    {
+      "record_index": 1,
+      "record_id": "line-002",
+      "resource_id": "bucket-007",
+      "service": "storage",
+      "cost": "3.25",
+      "currency": "USD",
+      "attribution": {
+        "team": "data",
+        "project": "analytics",
+        "environment": "dev"
+      },
+      "evidence": {
+        "team": {
+          "tag_key": "team",
+          "tag_value": "data"
+        },
+        "project": {
+          "tag_key": "project",
+          "tag_value": "analytics"
+        },
+        "environment": {
+          "tag_key": "environment",
+          "tag_value": "dev"
+        }
+      },
+      "status": "attributed"
+    },
+    {
+      "record_index": 2,
+      "record_id": "line-003",
+      "resource_id": "db-009",
+      "service": "database",
+      "cost": "5.00",
+      "currency": "USD",
+      "attribution": {
+        "team": "unallocated",
+        "project": "portal",
+        "environment": "prod"
+      },
+      "evidence": {
+        "team": {
+          "tag_key": "team",
+          "tag_value": null
+        },
+        "project": {
+          "tag_key": "project",
+          "tag_value": "portal"
+        },
+        "environment": {
+          "tag_key": "environment",
+          "tag_value": "prod"
+        }
+      },
+      "status": "review_required"
+    }
+  ],
+  "validation_issues": [],
+  "limitations": [
+    "Uses supplied records only; no provider API queried.",
+    "No currency conversion or cross-currency aggregation.",
+    "Unallocated costs and duplicate IDs require human review.",
+    "Not an official invoice or accounting entry."
+  ]
+}

@@ -1,0 +1,14 @@
+name: validate-cost-data
+description: Validate supplied cloud cost records and return field-level data quality issues.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    records: {type: array, items: {type: object}}
+  required: [records]
+output_schema:
+  type: object
+  properties:
+    valid: {type: boolean}
+    issues: {type: array}
+side_effects: none

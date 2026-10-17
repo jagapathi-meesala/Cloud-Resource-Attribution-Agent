@@ -1,0 +1,6 @@
+tag_keys:
+  team: team
+  project: project
+  environment: environment
+review:
+  missing_tag_value: unallocated
